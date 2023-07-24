@@ -7,6 +7,6 @@ import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
 
 
-private val localModule = module {
+val localModule = module {
     factoryOf(::LocalWeatherManagerImp) { bind<LocalWeatherManager>() }
 }

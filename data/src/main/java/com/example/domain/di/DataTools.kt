@@ -2,7 +2,6 @@ package com.example.domain.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.data.BuildConfig
 import com.example.domain.local.DBManager.AppDatabase
 import com.example.domain.networking.services.ApiServices
 import okhttp3.OkHttpClient
@@ -62,7 +61,7 @@ private fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor)
 
 private fun provideListRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
-    .baseUrl(BuildConfig.baseUrl)
+    .baseUrl("https://api.openweathermap.org")
     .client(okHttpClient)
     .build()
 
