@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7e1240db-3ed9-4168-b089-6c4a0d57ce20" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/androidTestResultsUserPreferences.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/androidTest/java/com/example/weatherapptest/usesCase/loadWeather/LoadWeatherUsesCaseImpTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/weatherapptest/presentation/home/HomeViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/weatherapptest/presentation/home/HomeViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/weatherapptest/presentation/search/SearchFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/weatherapptest/presentation/search/SearchFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/consumer-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/consumer-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/androidTest/java/com/example/domain/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidTest/java/com/example/domain/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/androidTest/java/com/example/domain/HiltTestRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidTest/java/com/example/domain/HiltTestRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/androidTest/java/com/example/domain/di/TestAppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidTest/java/com/example/domain/di/TestAppModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/androidTest/java/com/example/domain/local/LocalDataBaseWeatherTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidTest/java/com/example/domain/local/LocalDataBaseWeatherTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/androidTest/java/com/example/domain/test/WeatherLocalTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidTest/java/com/example/domain/test/WeatherLocalTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/base/DomainDTOMappingService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/base/DomainDTOMappingService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/di/DomaineTools.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/di/DomaineTools.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/di/DtoModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/di/DtoModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/di/LocalModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/di/LocalModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/di/NetworkingModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/di/NetworkingModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/di/RepositoryModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/di/RepositoryModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/DBManager/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/DBManager/AppDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/dao/baseDAO/BaseDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/dao/baseDAO/BaseDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/dao/weatherDao/WeatherDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/dao/weatherDao/WeatherDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/entitys/CloudsLocal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/entitys/CloudsLocal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/entitys/CoordLocal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/entitys/CoordLocal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/entitys/MainLocal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/entitys/MainLocal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/entitys/SysLocal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/entitys/SysLocal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/entitys/WeatherLocal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/entitys/WeatherLocal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/entitys/WeatherLocalModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/entitys/WeatherLocalModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/entitys/WindLocal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/entitys/WindLocal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/localManager/LocalWeatherManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/localManager/LocalWeatherManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/localManager/LocalWeatherManagerImp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/localManager/LocalWeatherManagerImp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/local/typeCoverter/WeatherTypeConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/local/typeCoverter/WeatherTypeConverter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/networking/services/ApiServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/networking/services/ApiServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/networking/weather/manager/WeatherNetworkManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/networking/weather/manager/WeatherNetworkManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/networking/weather/manager/WeatherNetworkManagerImp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/networking/weather/manager/WeatherNetworkManagerImp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/networking/weather/model/Clouds.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/networking/weather/model/Clouds.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/networking/weather/model/Coord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/networking/weather/model/Coord.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/networking/weather/model/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/networking/weather/model/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/networking/weather/model/Sys.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/networking/weather/model/Sys.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/networking/weather/model/Weather.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/networking/weather/model/Weather.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/networking/weather/model/WeatherModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/networking/weather/model/WeatherModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/networking/weather/model/Wind.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/networking/weather/model/Wind.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weather/manager/WeatherRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weather/manager/WeatherRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weather/manager/WeatherRepositoryImp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weather/manager/WeatherRepositoryImp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weather/model/CloudsRepModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weather/model/CloudsRepModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weather/model/CoordRepModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weather/model/CoordRepModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weather/model/MainRepModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weather/model/MainRepModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weather/model/RepositoryResponseModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weather/model/RepositoryResponseModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weather/model/SysRepModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weather/model/SysRepModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weather/model/WeatherRepModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weather/model/WeatherRepModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weather/model/WeatherRepositoryModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weather/model/WeatherRepositoryModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weather/model/WindRepModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weather/model/WindRepModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weatherdto/MappingWeatherLocalToRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weatherdto/MappingWeatherLocalToRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weatherdto/MappingWeatherNetWorkToRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weatherdto/MappingWeatherNetWorkToRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/repository/weatherdto/MappingWeatherRemoteToLocal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/repository/weatherdto/MappingWeatherRemoteToLocal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/main/java/com/example/domain/tools/data/DataState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/tools/data/DataState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../domain/src/test/java/com/example/domain/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/ExampleUnitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2SzeDEwVc4M8zvGbZ3I0VLp28p1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "android.gradle.sync.needed": "true",
+    "cidr.known.project.marker": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e1240db-3ed9-4168-b089-6c4a0d57ce20" name="Changes" comment="" />
+      <created>1690153714697</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690153714697</updated>
+    </task>
+    <servers />
+  </component>
+</project>
