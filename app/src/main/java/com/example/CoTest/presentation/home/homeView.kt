@@ -11,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.example.domain.loadUseCase.model.UserModel
@@ -32,6 +33,8 @@ import com.example.CoTest.tools.navigation.currentRoute
 import org.koin.androidx.compose.koinViewModel
 import com.example.CoTest.tools.component.items
 import com.example.CoTest.tools.component.pagingLoadingState
+import com.example.CoTest.tools.networkconnection.ConnectionState
+import com.example.CoTest.tools.networkconnection.connectivityState
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.animation.circular.CircularRevealPlugin
 import com.skydoves.landscapist.coil.CoilImage
@@ -41,17 +44,22 @@ import com.skydoves.landscapist.components.rememberImageComponent
 fun HomeScreen(
     navController: NavController
 ) {
+    // internet connection
+    val connection by connectivityState()
+    val isConnected = connection === ConnectionState.Available
+
     val viewModel: HomeViewModel = koinViewModel()
     val activity = (LocalContext.current as? Activity)
     val progressBar = remember { mutableStateOf(false) }
     val openDialog = remember { mutableStateOf(false) }
-    val pagedItems: LazyPagingItems<UserModel> = viewModel.loadUsesList().collectAsLazyPagingItems()
+    val pagedItems: LazyPagingItems<UserModel> = viewModel.loadUsesList(isConnected).collectAsLazyPagingItems()
+
 
     BackHandler(enabled = (currentRoute(navController) == Screen.HomeNav.route)) {
         openDialog.value = true
     }
     Column(modifier = Modifier.background(DefaultBackgroundColor)) {
-      //  CircularIndeterminateProgressBar(isDisplayed = progressBar.value, 0.4f)
+  //     CircularIndeterminateProgressBar(isDisplayed = progressBar.value, 0.4f)
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -72,7 +80,9 @@ fun HomeScreen(
         })
 
     }
-
+    pagedItems.pagingLoadingState {
+        progressBar.value = it
+    }
 }
 
 @Composable
@@ -82,7 +92,6 @@ fun UserItem(user: UserModel) {
             .fillMaxWidth()
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
     ) {
         CoilImage(
             modifier = Modifier

@@ -21,15 +21,6 @@ fun <T:Any> LazyListScope.items(
     }
 }
 
-fun <T : Any> LazyGridScope.items(
-    lazyPagingItems: LazyPagingItems<T>,
-    itemContent: @Composable LazyGridItemScope.(value: T?) -> Unit
-) {
-    items(lazyPagingItems.itemCount) { index ->
-        itemContent(lazyPagingItems[index])
-    }
-}
-
 @Composable
 fun <T : Any> LazyPagingItems<T>.pagingLoadingState(
     isLoaded: (pagingState: Boolean) -> Unit,
@@ -42,7 +33,7 @@ fun <T : Any> LazyPagingItems<T>.pagingLoadingState(
             }
             // data is loading for second time or pagination
             loadState.append is LoadState.Loading -> {
-                isLoaded(true)
+                isLoaded(false)
             }
             loadState.refresh is LoadState.NotLoading -> {
                 isLoaded(false)

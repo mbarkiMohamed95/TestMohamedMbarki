@@ -8,4 +8,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface UserRepository {
     fun loadUsersAsFlow(): Flow<PagingData<RepoUserModel>>
+    fun loadUsersFromLocal(): Flow<PagingData<RepoUserModel>>
 }

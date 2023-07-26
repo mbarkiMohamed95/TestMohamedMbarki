@@ -5,5 +5,5 @@ import com.example.domain.loadUseCase.model.UserModel
 import kotlinx.coroutines.flow.Flow
 
 interface LoadUsersListUseCase {
-     operator fun invoke(): Flow<PagingData<UserModel>>
+     operator fun invoke(isConnected: Boolean): Flow<PagingData<UserModel>>
 }

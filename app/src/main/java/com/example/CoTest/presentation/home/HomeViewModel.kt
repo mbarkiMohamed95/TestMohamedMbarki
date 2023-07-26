@@ -24,7 +24,6 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel constructor(private val loadUsersListUseCase: LoadUsersListUseCase) :
     ViewModel() {
-
-    fun loadUsesList() = loadUsersListUseCase().cachedIn(viewModelScope)
+    fun loadUsesList(isConnected:Boolean) = loadUsersListUseCase(isConnected).cachedIn(viewModelScope)
 
 }
