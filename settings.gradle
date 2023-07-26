@@ -12,7 +12,8 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "ExempleKoin"
+rootProject.name = "TestMohamedMbarki"
 include ':app'
 include ':domain'
 include ':data'
+include ':base'
