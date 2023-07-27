@@ -6,15 +6,10 @@ import com.example.data.local.entitys.LocalUserModel
 import kotlinx.coroutines.flow.Flow
 
 
-class LocalUsersManagerImp  constructor(private val userDao: UserDao) :LocalUsersManager {
-    override suspend fun saveUserList(users: List<LocalUserModel>) {
-        TODO("Not yet implemented")
-    }
-
+class LocalUsersManagerImp constructor(private val userDao: UserDao) : LocalUsersManager {
     override suspend fun saveUser(user: LocalUserModel) {
         userDao.insert(user)
     }
-
     override fun loadAllUsers(): PagingSource<Int, LocalUserModel> = userDao.loadAllUsers()
-
+    override suspend fun loadUserById(id: String): LocalUserModel = userDao.loadUserById(id)
 }

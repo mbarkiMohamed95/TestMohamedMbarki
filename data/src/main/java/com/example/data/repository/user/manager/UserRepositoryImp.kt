@@ -7,8 +7,10 @@ import androidx.paging.map
 import com.example.data.local.localManager.LocalUsersManager
 import com.example.data.networking.userInfo.manager.UserNetworkManager
 import com.example.data.repository.user.model.RepoUserModel
+import com.example.data.repository.user.model.UserDetailRepoModel
 import com.example.data.repository.userDto.LocalToRepoUserMapper
 import com.example.data.repository.userDto.RemoteToLocalUserMapper
+import com.example.data.repository.userDto.UserDetailMapper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -16,7 +18,8 @@ class UserRepositoryImp constructor(
     private val localUsersManager: LocalUsersManager,
     private val userNetworkManager: UserNetworkManager,
     private val remoteToLocalUserMapper: RemoteToLocalUserMapper,
-    private val localToRepoUserMapper: LocalToRepoUserMapper
+    private val localToRepoUserMapper: LocalToRepoUserMapper,
+    private val userDetailMapper: UserDetailMapper
 ) : UserRepository {
     override fun loadUsersAsFlow(): Flow<PagingData<RepoUserModel>> =
         Pager(
@@ -40,6 +43,9 @@ class UserRepositoryImp constructor(
                 localToRepoUserMapper.mapInputToOutput(itemRepo)
             }
         }
+
+    override suspend fun loadUserById(id: String): UserDetailRepoModel =
+        userDetailMapper.mapInputToOutput(localUsersManager.loadUserById(id))
 
 
 }

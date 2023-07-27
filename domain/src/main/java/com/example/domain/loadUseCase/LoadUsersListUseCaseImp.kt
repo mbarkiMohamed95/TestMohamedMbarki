@@ -12,6 +12,7 @@ class LoadUsersListUseCaseImp(private val userRepository: UserRepository) : Load
         userRepository.loadUsersAsFlow().map {
             it.map { item ->
                 UserModel(
+                    item.uuid?:"",
                     item.name?.first ?: "",
                     item.name?.last ?: "",
                     item.picture?.thumbnail ?: "",
@@ -21,6 +22,7 @@ class LoadUsersListUseCaseImp(private val userRepository: UserRepository) : Load
         } else userRepository.loadUsersFromLocal().map {
         it.map { item ->
             UserModel(
+                item.uuid?:"",
                 item.name?.first ?: "",
                 item.name?.last ?: "",
                 item.picture?.thumbnail ?: "",

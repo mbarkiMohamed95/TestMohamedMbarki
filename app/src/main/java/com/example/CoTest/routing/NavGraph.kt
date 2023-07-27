@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.CoTest.R
+import com.example.CoTest.presentation.detailUser.DetailUser
 import com.example.CoTest.presentation.home.HomeScreen
 import com.example.CoTest.tools.navigation.currentRoute
 
@@ -29,19 +30,18 @@ fun Navigation(
 
         }
 
-
         composable(
             Screen.Detail.route.plus(Screen.Detail.objectPath),
             arguments = listOf(navArgument(Screen.Detail.objectName) {
-                type = NavType.IntType
+                type = NavType.StringType
             })
         ) {
             label = stringResource(R.string.detail)
-            val movieId = it.arguments?.getInt(Screen.Detail.objectName)
-            if (movieId != null) {
-                /*   MovieDetail(
-                       navController = navController, movieId
-                   )*/
+            val userId = it.arguments?.getString(Screen.Detail.objectName)
+            if (userId != null) {
+                DetailUser(
+                    navController = navController, userId
+                )
             }
 
         }
@@ -53,8 +53,6 @@ fun Navigation(
 fun navigationTitle(navController: NavController): String {
     return when (currentRoute(navController)) {
         Screen.HomeNav.route -> stringResource(id = R.string.app_title)
-        /*        Screen.ArtistDetail.route -> stringResource(id = R.string.artist_detail)
-                Screen.Login.route -> stringResource(id = R.string.login)*/
         else -> {
             ""
         }

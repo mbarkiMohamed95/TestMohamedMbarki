@@ -52,14 +52,15 @@ fun HomeScreen(
     val activity = (LocalContext.current as? Activity)
     val progressBar = remember { mutableStateOf(false) }
     val openDialog = remember { mutableStateOf(false) }
-    val pagedItems: LazyPagingItems<UserModel> = viewModel.loadUsesList(isConnected).collectAsLazyPagingItems()
+    val pagedItems: LazyPagingItems<UserModel> =
+        viewModel.loadUsesList(isConnected).collectAsLazyPagingItems()
 
 
     BackHandler(enabled = (currentRoute(navController) == Screen.HomeNav.route)) {
         openDialog.value = true
     }
     Column(modifier = Modifier.background(DefaultBackgroundColor)) {
-  //     CircularIndeterminateProgressBar(isDisplayed = progressBar.value, 0.4f)
+        //     CircularIndeterminateProgressBar(isDisplayed = progressBar.value, 0.4f)
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -67,7 +68,7 @@ fun HomeScreen(
         ) {
             items(pagedItems) { user ->
                 user?.let {
-                    UserItem(user)
+                    UserItem(user, navController)
                 }
             }
         }
@@ -86,21 +87,22 @@ fun HomeScreen(
 }
 
 @Composable
-fun UserItem(user: UserModel) {
+fun UserItem(user: UserModel, navController: NavController) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp),
+            .padding(16.dp)
+            .clickable {
+                navController.navigate(Screen.Detail.route.plus("/${user.id}"))
+            },
         verticalAlignment = Alignment.CenterVertically,
-    ) {
+
+        ) {
         CoilImage(
             modifier = Modifier
                 .size(64.dp)
                 .clip(CircleShape)
-                .padding(8.dp)
-                .clickable {
-                    //navController.navigate(Screen.MovieDetail.route.plus("/${item.id}"))
-                },
+                .padding(8.dp),
             imageModel = { user.picture },
             imageOptions = ImageOptions(
                 contentScale = ContentScale.Crop,
