@@ -10,6 +10,10 @@ class LocalUsersManagerImp constructor(private val userDao: UserDao) : LocalUser
     override suspend fun saveUser(user: LocalUserModel) {
         userDao.insert(user)
     }
+
     override fun loadAllUsers(): PagingSource<Int, LocalUserModel> = userDao.loadAllUsers()
     override suspend fun loadUserById(id: String): LocalUserModel = userDao.loadUserById(id)
+    override suspend fun searchUser(
+        searchKey: String
+    ): List<LocalUserModel> = userDao.searchUser("%${searchKey}%")
 }

@@ -8,7 +8,9 @@ import androidx.room.PrimaryKey
 data class LocalUserModel(
     @PrimaryKey
     @ColumnInfo("uuid") var uuid: String = "",
-    @ColumnInfo("name") var name: LocalUserNameModel? = null,
+    @ColumnInfo("title") var title: String? = null,
+    @ColumnInfo("firstName") var firstName: String? = null,
+    @ColumnInfo("lastName") var lastName: String? = null,
     @ColumnInfo("email") var email: String = "",
     @ColumnInfo("phone") var phone: String = "",
     @ColumnInfo("gender") var gender: String = "",
@@ -37,21 +39,6 @@ fun LocalUserModel.location(block: LocalUserLocationModel.() -> Unit) {
     location = LocalUserLocationModel().apply(block)
 }
 
-/**
- * User Name
- */
-data class LocalUserNameModel(
-    var title: String = "",
-    var first: String = "",
-    var last: String = ""
-)
-
-/**
- * User Name Dsl
- */
-fun LocalUserModel.name(block: LocalUserNameModel.() -> Unit) {
-    name = LocalUserNameModel().apply(block)
-}
 /**
  *  User Picture
  */

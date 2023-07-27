@@ -8,11 +8,17 @@ import com.example.data.local.entitys.LocalUserModel
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface UserDao: BaseDao<LocalUserModel> {
+interface UserDao : BaseDao<LocalUserModel> {
 
     @Query("SELECT * FROM LocalUserModel")
-     fun loadAllUsers(): PagingSource<Int, LocalUserModel>
+    fun loadAllUsers(): PagingSource<Int, LocalUserModel>
+
     @Query("SELECT * FROM LocalUserModel WHERE :id LIKE uuid")
-     suspend fun loadUserById(id:String): LocalUserModel
+    suspend fun loadUserById(id: String): LocalUserModel
+
+    @Query(
+        "SELECT * FROM LocalUserModel WHERE firstName LIKE :searchKey OR lastName LIKE :searchKey "
+    )
+    suspend fun searchUser(searchKey: String): List<LocalUserModel>
 
 }

@@ -47,5 +47,13 @@ class UserRepositoryImp constructor(
     override suspend fun loadUserById(id: String): UserDetailRepoModel =
         userDetailMapper.mapInputToOutput(localUsersManager.loadUserById(id))
 
+    override suspend fun searchUser(
+        searchKey: String
+    ): List<RepoUserModel> = localToRepoUserMapper.mapInputToOutput(
+        localUsersManager.searchUser(
+            searchKey
+        )
+    )
+
 
 }

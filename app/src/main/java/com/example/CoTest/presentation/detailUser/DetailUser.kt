@@ -57,7 +57,7 @@ fun DetailUser(navController: NavController, userId: String) {
                         imageOptions = ImageOptions(
                             contentScale = ContentScale.Crop,
                             alignment = Alignment.Center,
-                            contentDescription = "Movie detail",
+                            contentDescription = "User detail",
                             colorFilter = null,
                         ),
                         component = rememberImageComponent {

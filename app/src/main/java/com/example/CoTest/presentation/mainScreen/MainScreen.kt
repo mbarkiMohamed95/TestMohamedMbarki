@@ -16,6 +16,8 @@ import com.example.CoTest.res.theme.Pink40
 import com.example.CoTest.routing.Navigation
 import com.example.CoTest.routing.Screen
 import com.example.CoTest.routing.navigationTitle
+import com.example.CoTest.tools.AsyncState
+import com.example.CoTest.tools.component.SearchUI
 import com.example.CoTest.tools.component.appbar.AppBarWithArrow
 import com.example.CoTest.tools.component.appbar.HomeAppBar
 import com.example.CoTest.tools.navigation.currentRoute
@@ -30,22 +32,13 @@ import org.koin.androidx.compose.koinViewModel
 fun MainScreen() {
     val navController = rememberNavController()
     val scaffoldState = rememberScaffoldState()
-    val scope = rememberCoroutineScope()
     val isAppBarVisible = remember { mutableStateOf(true) }
-    val searchProgressBar = remember { mutableStateOf(false) }
     val mainViewModel: MainViewModel = koinViewModel()
-
     // internet connection
     val connection by connectivityState()
     val isConnected = connection === ConnectionState.Available
 
-    // genre api call for first time
-    LaunchedEffect(key1 = 0) {
-        //    mainViewModel.genreList()
-    }
-
-
-    Scaffold(scaffoldState = scaffoldState, topBar = {
+     Scaffold(scaffoldState = scaffoldState, topBar = {
         when (currentRoute(navController)) {
             Screen.HomeNav.route -> {
                 if (isAppBarVisible.value) {
@@ -89,6 +82,13 @@ fun MainScreen() {
             modifier = Modifier.fillMaxWidth()
         ) {
             Navigation(navController, Modifier.padding(it))
+            Column {
+                if (isAppBarVisible.value.not()) {
+                    SearchUI(navController,mainViewModel.searchData.value ) {
+                        isAppBarVisible.value = true
+                    }
+                }
+            }
         }
 
     }

@@ -4,7 +4,6 @@ import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 import com.example.data.local.entitys.LocalUserLocationModel
 import com.example.data.local.entitys.LocalUserModel
-import com.example.data.local.entitys.LocalUserNameModel
 import com.example.data.local.entitys.LocalUserPictureModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -38,20 +37,6 @@ class UserTypeConverter {
     fun listUserLocalToString(list: List<LocalUserModel?>?): String? {
         val gson = Gson()
         val type: Type? = object : TypeToken<List<LocalUserModel?>?>() {}.type
-        return gson.toJson(list, type)
-    }
-
-    @TypeConverter
-    fun stringToLocalUserNameModel(json: String?): LocalUserNameModel? {
-        val gson = Gson()
-        val type: Type? = object : TypeToken<LocalUserNameModel?>() {}.type
-        return gson.fromJson(json, type)
-    }
-
-    @TypeConverter
-    fun localUserNameModelToString(list: LocalUserNameModel?): String? {
-        val gson = Gson()
-        val type: Type? = object : TypeToken<LocalUserNameModel?>() {}.type
         return gson.toJson(list, type)
     }
 

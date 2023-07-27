@@ -45,9 +45,10 @@ fun SearchBar(isAppBarVisible:MutableState<Boolean>, viewModel: MainViewModel){
             ),
             onValueChange = {
                 text = it
-                viewModel.searchApi(it)
+                if (it.length >=3){
+                    viewModel.searchApi(it)
+                }
             },
-            //shape = RoundedCornerShape(8.dp),
             singleLine = true,
             trailingIcon = {
                 if (text.trim().isNotEmpty()) {

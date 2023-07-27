@@ -7,14 +7,15 @@ import com.example.data.repository.user.model.userDetailRepoModel
 
 class UserDetailMapper : MappingService<LocalUserModel, UserDetailRepoModel> {
 
-    override fun mapInputToOutput(input: LocalUserModel): UserDetailRepoModel = userDetailRepoModel {
-        fullName = "${input.name?.title} ${input.name?.first} ${input.name?.last}"
-        email = input.email
-        phone = input.phone
-        location =
-            "${input.location?.street}, ${input.location?.city}, ${input.location?.state}, ${input.location?.country} ,${input.location?.postcode}"
-        picture = input.picture?.large ?: ""
-        gender = input.gender
-    }
+    override fun mapInputToOutput(input: LocalUserModel): UserDetailRepoModel =
+        userDetailRepoModel {
+            fullName = "${input.title} ${input?.firstName} ${input?.lastName}"
+            email = input.email
+            phone = input.phone
+            location =
+                "${input.location?.street}, ${input.location?.city}, ${input.location?.state}, ${input.location?.country} ,${input.location?.postcode}"
+            picture = input.picture?.large ?: ""
+            gender = input.gender
+        }
 
 }

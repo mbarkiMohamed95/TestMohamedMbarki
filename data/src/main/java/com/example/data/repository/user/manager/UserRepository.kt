@@ -10,6 +10,8 @@ import kotlinx.coroutines.flow.Flow
 interface UserRepository {
     fun loadUsersAsFlow(): Flow<PagingData<RepoUserModel>>
     fun loadUsersFromLocal(): Flow<PagingData<RepoUserModel>>
-
-    suspend fun loadUserById(id:String): UserDetailRepoModel
+    suspend fun loadUserById(id: String): UserDetailRepoModel
+    suspend fun searchUser(
+        searchKey: String =""
+    ): List<RepoUserModel>
 }
