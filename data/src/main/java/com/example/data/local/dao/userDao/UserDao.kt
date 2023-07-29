@@ -21,4 +21,6 @@ interface UserDao : BaseDao<LocalUserModel> {
     )
     suspend fun searchUser(searchKey: String): List<LocalUserModel>
 
+    @Query("DELETE  FROM LocalUserModel")
+    suspend fun deleteAll()
 }

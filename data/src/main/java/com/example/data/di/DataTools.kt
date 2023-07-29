@@ -17,8 +17,6 @@ import java.util.concurrent.TimeUnit
 
 
 val dataModule = module {
-    single { provideBlogDb(androidContext()) }
-    single { provideWeatherDao(get()) }
     single { providesHttpLoggingInterceptor() }
     single {
         providesOkHttpClient(get())
@@ -33,21 +31,6 @@ val dataModule = module {
          providesIODispatcher()
     }
 }
-
-private fun provideBlogDb(context: Context): AppDatabase {
-    return Room
-        .databaseBuilder(
-            context,
-            AppDatabase::class.java,
-            AppDatabase.DATABASE_NAME
-        )
-        .fallbackToDestructiveMigration()
-        .allowMainThreadQueries()
-        .build()
-}
-
-
-private fun provideWeatherDao(appDatabase: AppDatabase) = appDatabase.userDao()
 
 
 private fun providesHttpLoggingInterceptor() = HttpLoggingInterceptor()

@@ -11,7 +11,9 @@ interface UserRepository {
     fun loadUsersAsFlow(): Flow<PagingData<RepoUserModel>>
     fun loadUsersFromLocal(): Flow<PagingData<RepoUserModel>>
     suspend fun loadUserById(id: String): UserDetailRepoModel
+    suspend fun deleteAllUsers()
+
     suspend fun searchUser(
-        searchKey: String =""
+        searchKey: String = ""
     ): List<RepoUserModel>
 }
