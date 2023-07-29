@@ -15,4 +15,7 @@ class LocalDataBaseUserTest(private val dao: UserDao) {
     suspend fun deleteAllUsers() {
         dao.deleteAll()
     }
+    suspend fun searchUser(
+        searchKey: String
+    ): List<LocalUserModel> = dao.searchUser("%${searchKey}%")
 }

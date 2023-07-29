@@ -1,11 +1,9 @@
-package com.example.data.test
+package com.example.data.local.test
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.map
-import androidx.room.Room
-import androidx.test.core.app.ApplicationProvider
 import androidx.test.filters.LargeTest
 import com.example.data.KoinTestRule
 import com.example.data.di.localTestModule
@@ -28,9 +26,6 @@ import org.koin.test.inject
 
 @LargeTest
 class UserLocalTest : KoinTest {
-    /**
-     * Override default Koin configuration to use Room in-memory database
-     */
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
@@ -60,7 +55,7 @@ class UserLocalTest : KoinTest {
 
     @Test
     fun insertUserTest() {
-        CoroutineScope(Dispatchers.IO).launch  {
+        CoroutineScope(Dispatchers.IO).launch {
             localDataBaseUserTest.insetUser(userTestModel)
             delay(100)
             Pager(PagingConfig(pageSize = 20)) { localDataBaseUserTest.getAllUsers() }.flow.collect {
@@ -68,6 +63,41 @@ class UserLocalTest : KoinTest {
                     assertThat(user).isNotNull()
                 }
             }
+        }
+    }
+
+    @Test
+    fun searchUserByNameWithThreeCharacterTest() {
+        CoroutineScope(Dispatchers.IO).launch {
+            localDataBaseUserTest.insetUser(userTestModel)
+            delay(100)
+            assertThat(localDataBaseUserTest.searchUser("moh")).isNotNull()
+            assertThat(
+                localDataBaseUserTest.searchUser("moh").get(0).firstName
+            ).isEqualTo("Mohamed")
+        }
+    }
+
+    @Test
+    fun searchUserByLastNameWithThreeCharacterTest() {
+        CoroutineScope(Dispatchers.IO).launch {
+            localDataBaseUserTest.insetUser(userTestModel)
+            delay(100)
+            assertThat(localDataBaseUserTest.searchUser("mba")).isNotNull()
+            assertThat(
+                localDataBaseUserTest.searchUser("mba").get(0).firstName
+            ).isEqualTo("Mohamed")
+        }
+    }
+    @Test
+    fun searchUserByPhoneWithThreeCharacterTest() {
+        CoroutineScope(Dispatchers.IO).launch {
+            localDataBaseUserTest.insetUser(userTestModel)
+            delay(100)
+            assertThat(localDataBaseUserTest.searchUser("064")).isNotNull()
+            assertThat(
+                localDataBaseUserTest.searchUser("064").get(0).firstName
+            ).isEqualTo("Mohamed")
         }
     }
 
@@ -88,7 +118,7 @@ class UserLocalTest : KoinTest {
 
     @After
     fun tearDown() {
-      stopKoin()
+        stopKoin()
     }
 
 }
