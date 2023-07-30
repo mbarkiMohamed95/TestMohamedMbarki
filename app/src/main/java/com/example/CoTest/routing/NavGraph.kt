@@ -3,6 +3,8 @@ package com.example.CoTest.routing
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -21,11 +23,14 @@ import com.example.CoTest.tools.navigation.currentRoute
 fun Navigation(
     navController: NavHostController, modifier: Modifier
 ) {
-    NavHost(navController, startDestination = Screen.HomeNav.route, modifier) {
+    NavHost(
+        navController,
+        startDestination = Screen.HomeNav.route,
+        modifier.clearAndSetSemantics { contentDescription = "HomeNav" }) {
 
         composable(Screen.HomeNav.route) {
             HomeScreen(
-                navController = navController,
+                navController = navController
             )
 
         }

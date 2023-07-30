@@ -18,13 +18,17 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Blue
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.example.CoTest.presentation.mainScreen.MainViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @ExperimentalCoroutinesApi
 @Composable
-fun SearchBar(isAppBarVisible:MutableState<Boolean>, viewModel: MainViewModel){
+fun SearchBar(
+    isAppBarVisible: MutableState<Boolean>,
+    viewModel: MainViewModel,
+) {
     var text by remember { mutableStateOf("") }
     val focusRequester = FocusRequester()
     BackHandler(isAppBarVisible.value.not()) {
@@ -34,6 +38,7 @@ fun SearchBar(isAppBarVisible:MutableState<Boolean>, viewModel: MainViewModel){
         TextField(
             modifier = Modifier
                 .fillMaxWidth()
+                .testTag("searchtext")
                 .focusRequester(focusRequester),
             value = text,
             colors = TextFieldDefaults.textFieldColors(
@@ -45,7 +50,7 @@ fun SearchBar(isAppBarVisible:MutableState<Boolean>, viewModel: MainViewModel){
             ),
             onValueChange = {
                 text = it
-                if (it.length >=3){
+                if (it.length >= 3) {
                     viewModel.searchApi(it)
                 }
             },

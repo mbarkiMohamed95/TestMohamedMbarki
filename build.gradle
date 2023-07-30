@@ -9,6 +9,7 @@ ext {
     koin_version = "3.4.0"
     kotlin_version = "1.10.1"
     compose_version = '1.4.3'
+    mockk_version = '1.10.5'
     multidex_version = "2.0.1"
     commonDependencies  = [
             koinImp : "io.insert-koin:koin-android:$koin_version",
@@ -23,5 +24,4 @@ ext {
             mockitoTImp : "org.mockito:mockito-inline:4.8.0",
             multidexImp : "androidx.multidex:multidex:$multidex_version"
     ]
-
 }

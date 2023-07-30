@@ -10,7 +10,7 @@ class LocalDataBaseUserTest(private val dao: UserDao) {
         dao.insert(weatherLocalModel)
     }
 
-    fun getAllUsers(): PagingSource<Int, LocalUserModel> = dao.loadAllUsers()
+    fun getAllUsers(): List<LocalUserModel> = dao.loadUsers()
 
     suspend fun deleteAllUsers() {
         dao.deleteAll()

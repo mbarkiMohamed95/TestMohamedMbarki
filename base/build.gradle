@@ -36,11 +36,11 @@ dependencies {
     implementation project(path: ':domain')
 
     commonDependencies.each { key, value ->
-        if (key.endsWith('TImp')) {
+        if (key.endsWith('ATImp')) {
             androidTestImplementation value
         } else if (key.endsWith('Imp')) {
             implementation value
-        } else if (key.endsWith('ATImp')) {
+        } else if (key.endsWith('TImp')) {
             testImplementation value
         }
     }

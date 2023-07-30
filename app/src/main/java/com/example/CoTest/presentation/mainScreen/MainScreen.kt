@@ -7,16 +7,15 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.example.CoTest.R
-import com.example.CoTest.res.progressBar.CircularIndeterminateProgressBar
 import com.example.CoTest.res.theme.Pink40
 import com.example.CoTest.routing.Navigation
 import com.example.CoTest.routing.Screen
 import com.example.CoTest.routing.navigationTitle
-import com.example.CoTest.tools.AsyncState
 import com.example.CoTest.tools.component.SearchUI
 import com.example.CoTest.tools.component.appbar.AppBarWithArrow
 import com.example.CoTest.tools.component.appbar.HomeAppBar
@@ -24,7 +23,6 @@ import com.example.CoTest.tools.navigation.currentRoute
 import com.example.CoTest.tools.component.appbar.SearchBar
 import com.example.CoTest.tools.networkconnection.ConnectionState
 import com.example.CoTest.tools.networkconnection.connectivityState
-import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
 
 
@@ -60,7 +58,7 @@ fun MainScreen() {
     }, floatingActionButton = {
         when (currentRoute(navController)) {
             Screen.HomeNav.route -> {
-                FloatingActionButton(
+                FloatingActionButton(modifier = Modifier.testTag("searchAction"),
                     onClick = {
                         isAppBarVisible.value = false
                     }, backgroundColor = Pink40

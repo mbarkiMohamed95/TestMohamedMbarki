@@ -13,6 +13,9 @@ interface UserDao : BaseDao<LocalUserModel> {
     @Query("SELECT * FROM LocalUserModel")
     fun loadAllUsers(): PagingSource<Int, LocalUserModel>
 
+    @Query("SELECT * FROM LocalUserModel")
+    fun loadUsers(): List<LocalUserModel>
+
     @Query("SELECT * FROM LocalUserModel WHERE :id LIKE uuid")
     suspend fun loadUserById(id: String): LocalUserModel
 
