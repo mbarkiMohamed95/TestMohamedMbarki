@@ -2,6 +2,7 @@ package com.example.data.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.data.BuildConfig
 import com.example.data.local.dataBaseManager.AppDatabase
 import com.example.data.networking.services.ApiServices
 import kotlinx.coroutines.CoroutineDispatcher

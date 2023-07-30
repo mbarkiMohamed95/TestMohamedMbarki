@@ -1,16 +1,11 @@
 package com.example.data.network
 
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
-import androidx.paging.PagingSource
+
 import com.example.data.di.NetworkingTestModule
 import com.example.data.networking.services.ApiServices
-import com.example.data.networking.userInfo.manager.UserNetworkManager
 import com.example.data.networking.userInfo.model.Info
 import com.example.data.networking.userInfo.model.Results
 import com.example.data.networking.userInfo.model.UserResponse
-import io.mockk.every
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
