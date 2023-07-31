@@ -1,15 +1,10 @@
 package com.example.data.di
 
-import android.content.Context
-import androidx.room.Room
-import com.example.data.BuildConfig
-import com.example.data.local.dataBaseManager.AppDatabase
 import com.example.data.networking.services.ApiServices
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.android.ext.koin.androidContext
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit

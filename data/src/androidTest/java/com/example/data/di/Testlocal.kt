@@ -17,17 +17,12 @@ val localTestModule = module {
             .build()
     }
 
-
     single() {
         provideTestUserDao(get())
     }
     single() {
         LocalDataBaseUserTest(get())
     }
-   single {
-
-   }
-
 }
 
 private fun provideTestUserDao(appDatabase: AppDatabase) = appDatabase.userDao()
