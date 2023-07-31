@@ -1,6 +1,9 @@
 package com.example.data.di
 
+import androidx.core.os.BuildCompat
+import com.example.data.BuildConfig
 import com.example.data.networking.services.ApiServices
+import com.example.data.tools.DataConst.API_END_POINT
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
@@ -47,7 +50,7 @@ private fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor)
 
 private fun provideListRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
-    .baseUrl("https://randomuser.me")
+    .baseUrl(API_END_POINT)
     .client(okHttpClient)
     .build()
 
