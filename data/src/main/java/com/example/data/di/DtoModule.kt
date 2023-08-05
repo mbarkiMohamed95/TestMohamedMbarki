@@ -6,8 +6,8 @@ import com.example.data.repository.userDto.UserDetailMapper
 import com.example.data.base.MappingService
 import com.example.data.local.entitys.LocalUserModel
 import com.example.data.networking.userInfo.model.Results
-import com.example.data.repository.user.model.RepoUserModel
-import com.example.data.repository.user.model.UserDetailRepoModel
+import com.example.domain.repo.model.RepoUserModel
+import com.example.domain.repo.model.UserDetailRepoModel
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module

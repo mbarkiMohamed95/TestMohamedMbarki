@@ -28,7 +28,7 @@ import com.skydoves.landscapist.components.rememberImageComponent
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun DetailUser(navController: NavController, userId: String) {
+fun DetailUser(userId: String) {
     val viewModel: DetailUserViewModel = koinViewModel()
     val progressBar = remember { mutableStateOf(false) }
     val userDetail = viewModel.dataState.collectAsState().value.userDetail

@@ -39,7 +39,6 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':data')
 
     commonDependencies.each { key, value ->
         if (key.endsWith('ATImp')) {

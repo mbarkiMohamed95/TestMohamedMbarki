@@ -1,9 +1,13 @@
 package com.example.domain.loadUseCase
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.map
-import com.example.data.repository.user.manager.UserRepository
 import com.example.domain.loadUseCase.model.UserModel
+import com.example.domain.repo.UserRepository
+import com.example.domain.repo.model.RepoUserModel
+import com.example.domain.tools.paging.PagerService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

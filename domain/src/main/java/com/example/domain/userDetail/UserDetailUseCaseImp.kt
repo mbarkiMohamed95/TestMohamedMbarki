@@ -1,6 +1,6 @@
 package com.example.domain.userDetail
 
-import com.example.data.repository.user.manager.UserRepository
+import com.example.domain.repo.UserRepository
 import com.example.domain.userDetail.model.UserDetailModel
 
 class UserDetailUseCaseImp constructor(private val userRepository: UserRepository) :

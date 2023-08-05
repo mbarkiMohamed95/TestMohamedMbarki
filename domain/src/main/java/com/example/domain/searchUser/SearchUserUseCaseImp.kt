@@ -1,6 +1,6 @@
 package com.example.domain.searchUser
 
-import com.example.data.repository.user.manager.UserRepository
+import com.example.domain.repo.UserRepository
 import com.example.domain.loadUseCase.model.UserModel
 
 class SearchUserUseCaseImp(private val userRepository: UserRepository) : SearchUserUseCase {

@@ -1,27 +1,22 @@
 package com.example.data.repository
 
 import com.example.data.di.repositoryTestModule
-import com.example.data.network.ErrorResponseBody
-import com.example.data.networking.userInfo.model.UserResponse
-import com.example.data.repository.user.manager.UserRepository
-import com.example.data.repository.user.model.RepoUserModel
-import com.example.data.repository.user.model.RepoUserNameModel
-import com.example.data.repository.user.model.UserDetailRepoModel
+import com.example.domain.loadUseCase.UserRepository
+import com.example.domain.repo.model.RepoUserModel
+import com.example.domain.repo.model.UserDetailRepoModel
 import com.google.common.truth.Truth
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import kotlin.Result
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 import org.koin.test.KoinTest
 import org.koin.test.inject
 import org.mockito.Mockito
-import retrofit2.Response
 
 class UserRepositoryTest : KoinTest {
-    private val userRepository: UserRepository by inject()
+    private val userRepository: com.example.domain.loadUseCase.UserRepository by inject()
 
     private val successResponse =
         UserDetailRepoModel(

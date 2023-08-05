@@ -4,10 +4,10 @@ import com.example.data.base.MappingService
 import com.example.data.local.entitys.LocalUserLocationModel
 import com.example.data.local.entitys.LocalUserModel
 import com.example.data.local.entitys.LocalUserPictureModel
-import com.example.data.repository.user.model.RepoUserLocationModel
-import com.example.data.repository.user.model.RepoUserModel
-import com.example.data.repository.user.model.RepoUserNameModel
-import com.example.data.repository.user.model.RepoUserPictureModel
+import com.example.domain.repo.model.RepoUserLocationModel
+import com.example.domain.repo.model.RepoUserModel
+import com.example.domain.repo.model.RepoUserNameModel
+import com.example.domain.repo.model.RepoUserPictureModel
 
 class LocalToRepoUserMapper : MappingService<LocalUserModel, RepoUserModel> {
     override fun mapInputToOutput(input: LocalUserModel): RepoUserModel = input.run {

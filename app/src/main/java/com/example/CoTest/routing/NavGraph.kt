@@ -45,7 +45,7 @@ fun Navigation(
             val userId = it.arguments?.getString(Screen.Detail.objectName)
             if (userId != null) {
                 DetailUser(
-                    navController = navController, userId
+                    userId
                 )
             }
 

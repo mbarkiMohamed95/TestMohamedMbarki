@@ -1,4 +1,4 @@
-package com.example.data.repository.user.model
+package com.example.domain.repo.model
 
 
 

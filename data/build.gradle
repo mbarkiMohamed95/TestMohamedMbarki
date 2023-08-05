@@ -46,7 +46,7 @@ android {
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
-    testImplementation project(path: ':data')
+    implementation project(path: ':domain')
     androidTestImplementation 'org.testng:testng:6.9.6'
 
     //room
