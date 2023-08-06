@@ -18,23 +18,24 @@ class PagerServicesImp(private val loadUsersListUseCase: LoadUsersListUseCase) :
         }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UserModel> {
+        var resulat: LoadResult<Int, UserModel>? = null
         try {
             nextPage = params.key ?: 0
             loadUsersListUseCase(nextPage).onSuccess {
-                return LoadResult.Page(
+                resulat = LoadResult.Page(
                     data = it,
                     prevKey = null,
                     nextKey = if (it.isNotEmpty()) it[0].loadedPageNumber + 1 else null
                 )
             }.onFailure {
-                return LoadResult.Error(Exception("Failed"))
+                resulat = LoadResult.Error(Exception("Failed"))
             }
         } catch (exception: IOException) {
-            return LoadResult.Error(exception)
+            resulat = LoadResult.Error(exception)
         } catch (httpException: HttpException) {
-            return LoadResult.Error(httpException)
+            resulat = LoadResult.Error(httpException)
         }
-        return LoadResult.Error(Exception("Failed"))
+        return resulat!!
     }
 
 }
