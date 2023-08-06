@@ -1,7 +1,7 @@
 package com.example.data.repository
 
 import com.example.data.di.repositoryTestModule
-import com.example.domain.loadUseCase.UserRepository
+import com.example.domain.repo.user.UserRepository
 import com.example.domain.repo.user.model.UserDetailDtoModel
 import com.example.domain.repo.user.model.UserModelDto
 import com.google.common.truth.Truth
@@ -16,7 +16,7 @@ import org.koin.test.inject
 import org.mockito.Mockito
 
 class UserRepositoryTest : KoinTest {
-    private val userRepository: com.example.domain.loadUseCase.UserRepository by inject()
+    private val userRepository: UserRepository by inject()
 
     private val successResponse =
         UserDetailDtoModel(

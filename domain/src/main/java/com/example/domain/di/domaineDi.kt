@@ -14,4 +14,5 @@ val domaineDi = module {
     factoryOf(::LoadUsersListUseCaseImp) { bind<LoadUsersListUseCase>() }
     factoryOf(::UserDetailUseCaseImp) { bind<UserDetailUseCase>() }
     factoryOf(::SearchUserUseCaseImp) { bind<SearchUserUseCase>() }
+
 }

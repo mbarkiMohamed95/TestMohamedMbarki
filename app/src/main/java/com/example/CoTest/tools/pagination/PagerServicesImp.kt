@@ -26,7 +26,7 @@ class PagerServicesImp(private val loadUsersListUseCase: LoadUsersListUseCase) :
                     nextKey = if (it.isNotEmpty()) it[0].pageNumber + 1 else null
                 )
             }.onFailure {
-                return LoadResult.Error(Exception("Failed"))
+                return LoadResult.Error(it as Exception)
             }
         } catch (exception: IOException) {
             return LoadResult.Error(exception)

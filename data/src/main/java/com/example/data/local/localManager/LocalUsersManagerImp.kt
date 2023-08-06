@@ -36,8 +36,8 @@ class LocalUsersManagerImp constructor(private val userDao: UserDao, private val
 
     override suspend fun deleteAllUsers() = userDao.deleteAll()
 
-    override fun loadAllUsers(): List<LocalUserModel> = userDao.loadUsers()
-    override fun loadAllUsersAsResult(): Result<List<LocalUserModel>> {
+    override suspend fun loadAllUsers(): List<LocalUserModel> = userDao.loadUsers()
+    override suspend fun loadAllUsersAsResult(): Result<List<LocalUserModel>> {
         return if (userDao.loadUsers().isNotEmpty()
         ) Result.success(userDao.loadUsers()) else Result.failure(Exception("empty data"))
     }

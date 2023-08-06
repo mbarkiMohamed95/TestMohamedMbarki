@@ -1,6 +1,6 @@
 package com.example.location.di
 
-import com.example.domain.repo.location.LocationProvider
+import com.example.data.repository.location.LocationProvider
 import com.example.location.manger.LocationManagerImp
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf

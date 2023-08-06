@@ -8,8 +8,8 @@ interface LocalUsersManager {
     suspend fun getLoadedPage():Int
     suspend fun saveLoadedPage(page: Int)
     suspend fun deleteAllUsers()
-    fun loadAllUsers(): List<LocalUserModel>
-    fun loadAllUsersAsResult(): Result<List<LocalUserModel>>
+    suspend fun loadAllUsers(): List<LocalUserModel>
+    suspend fun loadAllUsersAsResult(): Result<List<LocalUserModel>>
     suspend fun loadUserById(id: String): LocalUserModel
     suspend fun searchUser(
         searchKey:String

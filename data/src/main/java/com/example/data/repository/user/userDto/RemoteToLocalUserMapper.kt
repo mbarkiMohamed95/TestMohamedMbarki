@@ -2,6 +2,7 @@ package com.example.data.repository.user.userDto
 
 import com.example.data.base.MappingService
 import com.example.data.local.entitys.LocalUserModel
+import com.example.data.local.entitys.coordination
 import com.example.data.local.entitys.localUserModel
 import com.example.data.local.entitys.location
 import com.example.data.local.entitys.picture
@@ -17,6 +18,7 @@ class RemoteToLocalUserMapper : MappingService<Results, LocalUserModel> {
         lastName = input.name.last
         title = input.name.title
 
+
         location {
             state = input.location.state
             street = "${input.location.street.number} + ${input.location.street.name}"
@@ -28,6 +30,10 @@ class RemoteToLocalUserMapper : MappingService<Results, LocalUserModel> {
             large = input.picture.large
             medium = input.picture.medium
             thumbnail = input.picture.thumbnail
+        }
+        coordination{
+            longitude = input.location.coordinates.longitude
+            latitude = input.location.coordinates.latitude
         }
     }
 }

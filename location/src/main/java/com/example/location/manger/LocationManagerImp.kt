@@ -9,16 +9,18 @@ import android.location.*
 import android.location.LocationManager
 import android.util.Log
 import androidx.core.content.ContextCompat
-import com.example.domain.repo.location.LocationProvider
+import com.example.data.repository.location.LocationProvider
 import com.google.android.gms.location.*
+import com.google.android.gms.tasks.CancellationTokenSource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 
 class LocationManagerImp constructor(private val context: Context) :
-    LocationProvider {
+    com.example.data.repository.location.LocationProvider {
     private var locationManager: LocationManager? = null
     private var fusedLocationProviderClient: FusedLocationProviderClient? = null
     private val TAG: String = javaClass.name
@@ -60,38 +62,29 @@ class LocationManagerImp constructor(private val context: Context) :
         currentActivity = activity
     }
 
-    override fun getCurrentLocation(
-        coroutineScope: CoroutineScope
-    ): Flow<Location?> = callbackFlow {
+    override fun getCurrentLocation(scope: CoroutineScope): Flow<Location> = callbackFlow {
         try {
             if (checkGpsStatus()) {
                 if (!checkLocationPermissions()) {
-                    val locationResult = fusedLocationProviderClient?.lastLocation
-                    locationResult?.addOnCompleteListener(
-                        currentActivity ?: return@callbackFlow
-                    ) { task ->
-                        coroutineScope.launch {
-                            if (task.isSuccessful) {
-                                // Set the map's camera position to the current location of the device.
-                                task.result?.let {
-                                    send(it)
-                                } ?: kotlin.run {
-                                    getLastKnownLocation(context)?.let { lastLocation ->
-                                        send(lastLocation)
-                                    }
-                                }
-                            } else {
-                                getLastKnownLocation(context)?.let { lastLocation ->
-                                    send(lastLocation)
-                                }
-                            }
+                    val locationClient = LocationServices.getFusedLocationProviderClient(context)
+                    locationClient.getCurrentLocation(
+                        Priority.PRIORITY_BALANCED_POWER_ACCURACY, CancellationTokenSource().token,
+                    ).addOnSuccessListener { location ->
+                        scope.launch {
+                            send(location)
+
+                        }
+                    }.addOnFailureListener {
+                        scope.launch {
+                            send(getFranceLocation())
                         }
                     }
+
                 } else {
-                    send(null)
+                    send(getFranceLocation())
                 }
             } else {
-                send(null)
+                send(getFranceLocation())
             }
         } catch (e: SecurityException) {
             Log.e("Exception: %s", e.message, e)
