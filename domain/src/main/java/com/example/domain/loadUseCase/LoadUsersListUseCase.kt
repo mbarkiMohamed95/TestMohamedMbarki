@@ -5,5 +5,5 @@ import com.example.domain.loadUseCase.model.UserModel
 import kotlinx.coroutines.flow.Flow
 
 interface LoadUsersListUseCase {
-     operator fun invoke(isConnected: Boolean): Flow<PagingData<UserModel>>
+    suspend operator fun invoke(page: Int): Result<List<UserModel>>
 }

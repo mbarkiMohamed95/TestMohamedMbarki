@@ -1,5 +1,6 @@
 package com.example.data.repository.userDto
 
+import android.content.Context
 import com.example.data.base.MappingService
 import com.example.data.local.entitys.LocalUserLocationModel
 import com.example.data.local.entitys.LocalUserModel
@@ -9,7 +10,7 @@ import com.example.domain.repo.model.RepoUserModel
 import com.example.domain.repo.model.RepoUserNameModel
 import com.example.domain.repo.model.RepoUserPictureModel
 
-class LocalToRepoUserMapper : MappingService<LocalUserModel, RepoUserModel> {
+class LocalToRepoUserMapper  : MappingService<LocalUserModel, RepoUserModel> {
     override fun mapInputToOutput(input: LocalUserModel): RepoUserModel = input.run {
         RepoUserModel(
             uuid,
@@ -18,7 +19,8 @@ class LocalToRepoUserMapper : MappingService<LocalUserModel, RepoUserModel> {
             phone,
             gender,
             mapToRepoUserLocationModel(input.location),
-            mapToRepoUserPictureModel(input.picture)
+            mapToRepoUserPictureModel(input.picture),
+            pageNumber
         )
     }
 

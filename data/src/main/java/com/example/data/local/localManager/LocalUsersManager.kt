@@ -7,6 +7,8 @@ import kotlinx.coroutines.flow.Flow
 interface LocalUsersManager {
     suspend fun saveUser(user: LocalUserModel)
     suspend fun saveUserList(users: List<LocalUserModel>)
+    suspend fun getLoadedPage():Int
+    suspend fun saveLoadedPage(page: Int)
     suspend fun deleteAllUsers()
     fun loadAllUsers(): List<LocalUserModel>
     fun loadAllUsersAsResult(): Result<List<LocalUserModel>>

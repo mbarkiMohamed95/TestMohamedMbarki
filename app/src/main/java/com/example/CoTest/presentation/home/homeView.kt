@@ -46,14 +46,12 @@ fun HomeScreen(
     navController: NavController
 ) {
     // internet connection
-    val connection by connectivityState()
-    val isConnected = connection === ConnectionState.Available
     val viewModel: HomeViewModel = koinViewModel()
     val activity = (LocalContext.current as? Activity)
     val progressBar = remember { mutableStateOf(false) }
     val openDialog = remember { mutableStateOf(false) }
     val pagedItems: LazyPagingItems<UserModel> =
-        viewModel.loadUsesList(isConnected).collectAsLazyPagingItems()
+        viewModel.loadUsesList().collectAsLazyPagingItems()
 
     BackHandler(enabled = (currentRoute(navController) == Screen.HomeNav.route)) {
         openDialog.value = true

@@ -41,12 +41,12 @@ class UserRepositoryImp constructor(
 
     override suspend fun loadUsers(page: Int): Result<List<RepoUserModel>> =
         Result.runCatchingAndMapToListDomain(localToRepoUserMapper) {
-            userNetworkManager.loadUsers(page).onSuccess {
-                remoteToLocalUserMapper.mapInputToOutput(it.results).also { localItem ->
+            userNetworkManager.loadUsers(page).onSuccess {userRep->
+                remoteToLocalUserMapper.mapInputToOutput(userRep.results).also { localItem ->
+                    localItem.map { it.pageNumber = userRep.info.page }
                     localUsersManager.saveUserList(localItem)
                 }
             }
-
             localUsersManager.loadAllUsersAsResult()
         }
 

@@ -76,6 +76,10 @@ dependencies {
     androidTestImplementation "com.google.truth:truth:1.0.1"
     testImplementation "com.google.truth:truth:1.0.1"
 
+    // Preferences DataStore (SharedPreferences like APIs)
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+
     commonDependencies.each { key, value ->
         if (key.endsWith('ATImp')) {
             androidTestImplementation value

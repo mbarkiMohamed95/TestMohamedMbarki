@@ -15,7 +15,8 @@ data class LocalUserModel(
     @ColumnInfo("phone") var phone: String = "",
     @ColumnInfo("gender") var gender: String = "",
     @ColumnInfo("location") var location: LocalUserLocationModel? = null,
-    @ColumnInfo("picture") var picture: LocalUserPictureModel? = null
+    @ColumnInfo("picture") var picture: LocalUserPictureModel? = null,
+    @ColumnInfo("pageNumber") var pageNumber: Int = 0
 )
 
 fun localUserModel(block: LocalUserModel.() -> Unit): LocalUserModel = LocalUserModel().apply(block)

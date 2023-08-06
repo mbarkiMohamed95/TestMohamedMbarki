@@ -15,7 +15,6 @@ import org.koin.dsl.module
 val localModule = module {
     single { provideBlogDb(androidContext()) }
     single { provideWeatherDao(get()) }
-
     singleOf(::LocalUsersManagerImp) { bind<LocalUsersManager>() }
 }
 

@@ -9,7 +9,8 @@ data class RepoUserModel(
     var phone: String = "",
     var gender: String = "",
     var location: RepoUserLocationModel? = null,
-    var picture: RepoUserPictureModel? = null
+    var picture: RepoUserPictureModel? = null,
+    var pageNumber: Int = 0
 )
 
 data class RepoUserLocationModel(
