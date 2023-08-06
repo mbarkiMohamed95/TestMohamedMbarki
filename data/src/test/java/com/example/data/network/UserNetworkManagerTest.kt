@@ -6,20 +6,20 @@ import com.example.data.networking.services.ApiServices
 import com.example.data.networking.userInfo.model.Info
 import com.example.data.networking.userInfo.model.Results
 import com.example.data.networking.userInfo.model.UserResponse
-import kotlinx.coroutines.runBlocking
-import org.junit.Before
-import org.junit.Test
-import org.koin.core.context.startKoin
-import org.koin.test.KoinTest
-import org.koin.test.inject
-import retrofit2.Response
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.runBlocking
 import okhttp3.MediaType
 import okhttp3.ResponseBody
 import okio.BufferedSource
 import org.junit.After
+import org.junit.Before
+import org.junit.Test
+import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
+import org.koin.test.KoinTest
+import org.koin.test.inject
 import org.mockito.Mockito
+import retrofit2.Response
 
 class UserNetworkManagerTest : KoinTest {
     private val apiServices: ApiServices by inject()

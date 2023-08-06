@@ -4,14 +4,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.CoTest.presentation.detailUser.action.DetailViewAction
 import com.example.CoTest.tools.AsyncState
+import com.example.domain.repo.model.UserDetailDtoModel
 import com.example.domain.userDetail.UserDetailUseCase
-import com.example.domain.userDetail.model.UserDetailModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-data class DetailUserUiModel(var userDetail: AsyncState<UserDetailModel>? = null)
+data class DetailUserUiModel(var userDetail: AsyncState<UserDetailDtoModel>? = null)
 
 class DetailUserViewModel constructor(private val userDetailUseCase: UserDetailUseCase) :
     ViewModel() {

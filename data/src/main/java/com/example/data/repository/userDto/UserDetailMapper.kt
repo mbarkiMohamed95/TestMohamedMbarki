@@ -2,14 +2,14 @@ package com.example.data.repository.userDto
 
 import com.example.data.base.MappingService
 import com.example.data.local.entitys.LocalUserModel
-import com.example.data.repository.user.model.UserDetailRepoModel
-import com.example.data.repository.user.model.userDetailRepoModel
+import com.example.domain.repo.model.UserDetailDtoModel
+import com.example.domain.repo.model.userDetailRepoModel
 
-class UserDetailMapper : MappingService<LocalUserModel, UserDetailRepoModel> {
+class UserDetailMapper : MappingService<LocalUserModel, UserDetailDtoModel> {
 
-    override fun mapInputToOutput(input: LocalUserModel): UserDetailRepoModel =
+    override fun mapInputToOutput(input: LocalUserModel): UserDetailDtoModel =
         userDetailRepoModel {
-            fullName = "${input.title} ${input?.firstName} ${input?.lastName}"
+            fullName = "${input.title} ${input.firstName} ${input.lastName}"
             email = input.email
             phone = input.phone
             location =

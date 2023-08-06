@@ -16,6 +16,7 @@ class RemoteToLocalUserMapper : MappingService<Results, LocalUserModel> {
         firstName = input.name.first
         lastName = input.name.last
         title = input.name.title
+
         location {
             state = input.location.state
             street = "${input.location.street.number} + ${input.location.street.name}"

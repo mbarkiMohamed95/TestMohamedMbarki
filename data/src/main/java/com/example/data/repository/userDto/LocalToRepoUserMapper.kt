@@ -4,26 +4,27 @@ import com.example.data.base.MappingService
 import com.example.data.local.entitys.LocalUserLocationModel
 import com.example.data.local.entitys.LocalUserModel
 import com.example.data.local.entitys.LocalUserPictureModel
-import com.example.data.repository.user.model.RepoUserLocationModel
-import com.example.data.repository.user.model.RepoUserModel
-import com.example.data.repository.user.model.RepoUserNameModel
-import com.example.data.repository.user.model.RepoUserPictureModel
+import com.example.domain.repo.model.UserLocationModelDto
+import com.example.domain.repo.model.UserModelDto
+import com.example.domain.repo.model.UserNameModelDto
+import com.example.domain.repo.model.UserPictureModelDto
 
-class LocalToRepoUserMapper : MappingService<LocalUserModel, RepoUserModel> {
-    override fun mapInputToOutput(input: LocalUserModel): RepoUserModel = input.run {
-        RepoUserModel(
+class LocalToRepoUserMapper  : MappingService<LocalUserModel, UserModelDto> {
+    override fun mapInputToOutput(input: LocalUserModel): UserModelDto = input.run {
+        UserModelDto(
             uuid,
-            RepoUserNameModel(title ?: "", firstName ?: "", lastName ?: ""),
+            UserNameModelDto(title ?: "", firstName ?: "", lastName ?: ""),
             email,
             phone,
             gender,
             mapToRepoUserLocationModel(input.location),
-            mapToRepoUserPictureModel(input.picture)
+            mapToRepoUserPictureModel(input.picture),
+            pageNumber
         )
     }
 
     private fun mapToRepoUserLocationModel(location: LocalUserLocationModel?) = location?.run {
-        RepoUserLocationModel(
+        UserLocationModelDto(
             location.street,
             location.city,
             location.state,
@@ -34,7 +35,7 @@ class LocalToRepoUserMapper : MappingService<LocalUserModel, RepoUserModel> {
 
 
     private fun mapToRepoUserPictureModel(picture: LocalUserPictureModel?) = picture?.run {
-        RepoUserPictureModel(
+        UserPictureModelDto(
             picture.large,
             picture.medium,
             picture.thumbnail

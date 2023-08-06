@@ -1,7 +1,7 @@
 package com.example.data.di
 
-import com.example.data.repository.user.manager.UserRepository
 import com.example.data.repository.user.manager.UserRepositoryImp
+import com.example.domain.repo.UserRepository
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module

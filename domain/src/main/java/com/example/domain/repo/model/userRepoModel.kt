@@ -1,18 +1,19 @@
-package com.example.data.repository.user.model
+package com.example.domain.repo.model
 
 
 
-data class RepoUserModel(
+data class UserModelDto(
     var uuid: String = "",
-    var name: RepoUserNameModel? = null,
+    var name: UserNameModelDto? = null,
     var email: String = "",
     var phone: String = "",
     var gender: String = "",
-    var location: RepoUserLocationModel? = null,
-    var picture: RepoUserPictureModel? = null
+    var location: UserLocationModelDto? = null,
+    var picture: UserPictureModelDto? = null,
+    var pageNumber: Int = 0
 )
 
-data class RepoUserLocationModel(
+data class UserLocationModelDto(
     var street: String = "",
     var city: String = "",
     var state: String = "",
@@ -20,13 +21,13 @@ data class RepoUserLocationModel(
     var postcode: String = "",
 )
 
-data class RepoUserNameModel(
+data class UserNameModelDto(
     var title: String = "",
     var first: String = "",
     var last: String = ""
 )
 
-data class RepoUserPictureModel(
+data class UserPictureModelDto(
     var large: String = "",
     var medium: String = "",
     var thumbnail: String = ""

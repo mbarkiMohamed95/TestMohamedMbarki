@@ -1,9 +1,7 @@
 package com.example.domain.loadUseCase
 
-import androidx.paging.PagingData
-import com.example.domain.loadUseCase.model.UserModel
-import kotlinx.coroutines.flow.Flow
+import com.example.domain.repo.model.UserModelDto
 
 interface LoadUsersListUseCase {
-     operator fun invoke(isConnected: Boolean): Flow<PagingData<UserModel>>
+    suspend operator fun invoke(page: Int): Result<List<UserModelDto>>
 }

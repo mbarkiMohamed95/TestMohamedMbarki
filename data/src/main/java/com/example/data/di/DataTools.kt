@@ -1,7 +1,5 @@
 package com.example.data.di
 
-import androidx.core.os.BuildCompat
-import com.example.data.BuildConfig
 import com.example.data.networking.services.ApiServices
 import com.example.data.tools.DataConst.API_END_POINT
 import kotlinx.coroutines.CoroutineDispatcher

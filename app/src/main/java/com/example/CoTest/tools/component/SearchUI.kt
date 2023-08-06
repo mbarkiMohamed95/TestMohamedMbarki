@@ -2,7 +2,12 @@ package com.example.CoTest.tools.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -18,7 +23,7 @@ import androidx.navigation.NavController
 import com.example.CoTest.res.theme.DefaultBackgroundColor
 import com.example.CoTest.routing.Screen
 import com.example.CoTest.tools.AsyncState
-import com.example.domain.loadUseCase.model.UserModel
+import com.example.domain.repo.model.UserModelDto
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.animation.circular.CircularRevealPlugin
 import com.skydoves.landscapist.coil.CoilImage
@@ -27,7 +32,7 @@ import com.skydoves.landscapist.components.rememberImageComponent
 @Composable
 fun SearchUI(
     navController: NavController,
-    searchData: AsyncState<List<UserModel>>?,
+    searchData: AsyncState<List<UserModelDto>>?,
     itemClick: () -> Unit
 ) {
     LazyColumn(
@@ -48,7 +53,7 @@ fun SearchUI(
                                 itemClick.invoke()
                                 navController.navigate(
                                     Screen.Detail.route.plus(
-                                        "/${item.id}"
+                                        "/${item.uuid}"
                                     )
                                 )
                             }) {
@@ -71,7 +76,7 @@ fun SearchUI(
                             )
                             Column {
                                 Text(
-                                    text = item.firstName + " " + item.lastName,
+                                    text = item.name?.first + " " + item.name?.last,
                                     modifier = Modifier.padding(
                                         start = 8.dp,
                                         top = 4.dp
