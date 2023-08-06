@@ -1,9 +1,9 @@
-package com.example.data.repository.userDto
+package com.example.data.repository.user.userDto
 
 import com.example.data.base.MappingService
 import com.example.data.local.entitys.LocalUserModel
-import com.example.domain.repo.model.UserDetailDtoModel
-import com.example.domain.repo.model.userDetailRepoModel
+import com.example.domain.repo.user.model.UserDetailDtoModel
+import com.example.domain.repo.user.model.userDetailRepoModel
 
 class UserDetailMapper : MappingService<LocalUserModel, UserDetailDtoModel> {
 

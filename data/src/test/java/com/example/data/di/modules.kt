@@ -1,7 +1,7 @@
 package com.example.data.di
 
 import com.example.data.networking.services.ApiServices
-import com.example.domain.loadUseCase.UserRepository
+import com.example.domain.repo.user.UserRepository
 import org.koin.dsl.module
 import org.mockito.Mockito.mock
 
@@ -10,5 +10,5 @@ val NetworkingTestModule = module() {
 }
 
 val repositoryTestModule = module() {
-    single<com.example.domain.loadUseCase.UserRepository> { mock(com.example.domain.loadUseCase.UserRepository::class.java) }
+    single<UserRepository> { mock(UserRepository::class.java) }
 }

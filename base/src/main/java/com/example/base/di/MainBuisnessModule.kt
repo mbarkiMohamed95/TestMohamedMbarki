@@ -6,6 +6,7 @@ import com.example.data.di.localModule
 import com.example.data.di.networkingModule
 import com.example.data.di.repositoryModule
 import com.example.domain.di.domaineDi
+import com.example.location.di.locationModule
 import org.koin.dsl.module
 
 val dataLayerModule = module {
@@ -14,4 +15,7 @@ val dataLayerModule = module {
 
 val domainLayerModules = module{
     includes(domaineDi)
+}
+val locationProviderModules = module{
+    includes(locationModule)
 }

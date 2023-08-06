@@ -7,6 +7,7 @@ import com.example.CoTest.di.servicesModule
 import com.example.CoTest.di.viewModelsProvider
 import com.example.base.di.dataLayerModule
 import com.example.base.di.domainLayerModules
+import com.example.base.di.locationProviderModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -27,7 +28,7 @@ class BaseApplication : MultiDexApplication() {
             // Reference Android context
             androidContext(this@BaseApplication)
             // Load modules
-            modules(dataLayerModule, domainLayerModules, viewModelsProvider, servicesModule)
+            modules(dataLayerModule, domainLayerModules, viewModelsProvider, servicesModule,locationProviderModules)
         }
     }
 

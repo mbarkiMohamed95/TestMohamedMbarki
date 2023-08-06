@@ -3,8 +3,7 @@ package com.example.CoTest.tools.pagination
 import androidx.paging.PagingState
 import coil.network.HttpException
 import com.example.domain.loadUseCase.LoadUsersListUseCase
-import com.example.domain.repo.model.UserModelDto
-import com.example.domain.tools.paging.PagerService
+import com.example.domain.repo.user.model.UserModelDto
 import java.io.IOException
 
 class PagerServicesImp(private val loadUsersListUseCase: LoadUsersListUseCase) :
@@ -27,7 +26,7 @@ class PagerServicesImp(private val loadUsersListUseCase: LoadUsersListUseCase) :
                     nextKey = if (it.isNotEmpty()) it[0].pageNumber + 1 else null
                 )
             }.onFailure {
-                return LoadResult.Error(Exception("Failed"))
+                return LoadResult.Error(it as Exception)
             }
         } catch (exception: IOException) {
             return LoadResult.Error(exception)

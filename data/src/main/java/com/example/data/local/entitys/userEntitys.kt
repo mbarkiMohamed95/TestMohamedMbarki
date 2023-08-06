@@ -16,8 +16,10 @@ data class LocalUserModel(
     @ColumnInfo("gender") var gender: String = "",
     @ColumnInfo("location") var location: LocalUserLocationModel? = null,
     @ColumnInfo("picture") var picture: LocalUserPictureModel? = null,
-    @ColumnInfo("pageNumber") var pageNumber: Int = 0
-)
+    @ColumnInfo("pageNumber") var pageNumber: Int = 0,
+    @ColumnInfo("coordination") var coordination: LocalCoordinationModel? = null,
+
+    )
 
 fun localUserModel(block: LocalUserModel.() -> Unit): LocalUserModel = LocalUserModel().apply(block)
 
@@ -40,6 +42,22 @@ fun LocalUserModel.location(block: LocalUserLocationModel.() -> Unit) {
     location = LocalUserLocationModel().apply(block)
 }
 
+
+/**
+ * User  Coordination location
+ */
+data class LocalCoordinationModel(
+    var latitude: Double = 0.0,
+    var longitude: Double = 0.0
+)
+
+/**
+ * DSL Coordination location
+ */
+
+fun LocalUserModel.coordination(block: LocalCoordinationModel.() -> Unit) {
+    coordination = LocalCoordinationModel().apply(block)
+}
 /**
  *  User Picture
  */

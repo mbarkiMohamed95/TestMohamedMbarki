@@ -1,6 +1,6 @@
 package com.example.domain.userDetail
 
-import com.example.domain.repo.model.UserDetailDtoModel
+import com.example.domain.repo.user.model.UserDetailDtoModel
 
 
 interface UserDetailUseCase {

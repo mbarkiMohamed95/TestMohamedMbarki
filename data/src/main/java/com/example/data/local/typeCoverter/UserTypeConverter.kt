@@ -2,6 +2,7 @@ package com.example.data.local.typeCoverter
 
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
+import com.example.data.local.entitys.LocalCoordinationModel
 import com.example.data.local.entitys.LocalUserLocationModel
 import com.example.data.local.entitys.LocalUserModel
 import com.example.data.local.entitys.LocalUserPictureModel
@@ -66,6 +67,21 @@ class UserTypeConverter {
     fun localUserPictureModelToString(list: LocalUserPictureModel?): String? {
         val gson = Gson()
         val type: Type? = object : TypeToken<LocalUserPictureModel?>() {}.type
+        return gson.toJson(list, type)
+    }
+
+
+    @TypeConverter
+    fun stringToLocalCoordinationModel(json: String?): LocalCoordinationModel? {
+        val gson = Gson()
+        val type: Type? = object : TypeToken<LocalCoordinationModel?>() {}.type
+        return gson.fromJson(json, type)
+    }
+
+    @TypeConverter
+    fun localCoordinationModelToString(list: LocalCoordinationModel?): String? {
+        val gson = Gson()
+        val type: Type? = object : TypeToken<LocalCoordinationModel?>() {}.type
         return gson.toJson(list, type)
     }
 

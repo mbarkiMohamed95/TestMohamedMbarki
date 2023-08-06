@@ -38,7 +38,7 @@ import com.example.CoTest.tools.component.ExitAlertDialog
 import com.example.CoTest.tools.component.items
 import com.example.CoTest.tools.component.pagingLoadingState
 import com.example.CoTest.tools.navigation.currentRoute
-import com.example.domain.repo.model.UserModelDto
+import com.example.domain.repo.user.model.UserModelDto
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.animation.circular.CircularRevealPlugin
 import com.skydoves.landscapist.coil.CoilImage

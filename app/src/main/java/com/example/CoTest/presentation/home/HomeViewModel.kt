@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
-import com.example.domain.tools.paging.PagerService
+import com.example.CoTest.tools.pagination.PagerService
 
 
 class HomeViewModel constructor(private val pagerService: PagerService) :

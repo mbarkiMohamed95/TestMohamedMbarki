@@ -1,7 +1,7 @@
 package com.example.domain.searchUser
 
-import com.example.domain.repo.UserRepository
-import com.example.domain.repo.model.UserModelDto
+import com.example.domain.repo.user.UserRepository
+import com.example.domain.repo.user.model.UserModelDto
 
 class SearchUserUseCaseImp(private val userRepository: UserRepository) : SearchUserUseCase {
 
