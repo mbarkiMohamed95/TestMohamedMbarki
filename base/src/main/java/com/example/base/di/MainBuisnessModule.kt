@@ -15,3 +15,6 @@ val dataLayerModule = module {
 val domainLayerModules = module{
     includes(domaineDi)
 }
+val locationProviderModules = module{
+    includes(localModule)
+}

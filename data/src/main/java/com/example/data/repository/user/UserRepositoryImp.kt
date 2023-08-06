@@ -1,14 +1,14 @@
-package com.example.data.repository.user.manager
+package com.example.data.repository.user
 
 import com.example.data.local.localManager.LocalUsersManager
 import com.example.data.networking.userInfo.manager.UserNetworkManager
-import com.example.data.repository.userDto.LocalToRepoUserMapper
-import com.example.data.repository.userDto.RemoteToLocalUserMapper
-import com.example.data.repository.userDto.UserDetailMapper
+import com.example.data.repository.user.userDto.LocalToRepoUserMapper
+import com.example.data.repository.user.userDto.RemoteToLocalUserMapper
+import com.example.data.repository.user.userDto.UserDetailMapper
 import com.example.data.tools.runCatchingAndMapToListDomain
-import com.example.domain.repo.UserRepository
-import com.example.domain.repo.model.UserDetailDtoModel
-import com.example.domain.repo.model.UserModelDto
+import com.example.domain.repo.user.UserRepository
+import com.example.domain.repo.user.model.UserDetailDtoModel
+import com.example.domain.repo.user.model.UserModelDto
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -19,20 +19,6 @@ class UserRepositoryImp constructor(
     private val localToRepoUserMapper: LocalToRepoUserMapper,
     private val userDetailMapper: UserDetailMapper
 ) : UserRepository {
-    override fun loadUsersAsFlow(page: Int): Flow<Result<List<UserModelDto>>> = flow {
-        userNetworkManager.loadUsers(page).onSuccess {
-            remoteToLocalUserMapper.mapInputToOutput(it.results).also { localItem ->
-                localUsersManager.saveUserList(localItem)
-            }
-            emit(Result.success(localToRepoUserMapper.mapInputToOutput(localUsersManager.loadAllUsers())))
-        }.onFailure {
-            if (localUsersManager.loadAllUsers().isEmpty()) {
-                emit(Result.success(localToRepoUserMapper.mapInputToOutput(localUsersManager.loadAllUsers())))
-            } else {
-                emit(Result.failure(Exception("no data found")))
-            }
-        }
-    }
 
     override suspend fun loadUsers(page: Int): Result<List<UserModelDto>> =
         Result.runCatchingAndMapToListDomain(localToRepoUserMapper) {
@@ -58,6 +44,5 @@ class UserRepositoryImp constructor(
             searchKey
         )
     )
-
 
 }

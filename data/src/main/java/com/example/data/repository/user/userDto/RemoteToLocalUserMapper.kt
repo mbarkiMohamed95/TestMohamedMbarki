@@ -1,4 +1,4 @@
-package com.example.data.repository.userDto
+package com.example.data.repository.user.userDto
 
 import com.example.data.base.MappingService
 import com.example.data.local.entitys.LocalUserModel

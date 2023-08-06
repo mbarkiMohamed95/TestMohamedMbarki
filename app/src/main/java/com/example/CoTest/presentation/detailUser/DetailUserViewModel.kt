@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.CoTest.presentation.detailUser.action.DetailViewAction
 import com.example.CoTest.tools.AsyncState
-import com.example.domain.repo.model.UserDetailDtoModel
+import com.example.domain.repo.user.model.UserDetailDtoModel
 import com.example.domain.userDetail.UserDetailUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

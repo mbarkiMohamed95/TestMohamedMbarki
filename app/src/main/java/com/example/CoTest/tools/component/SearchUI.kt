@@ -23,7 +23,7 @@ import androidx.navigation.NavController
 import com.example.CoTest.res.theme.DefaultBackgroundColor
 import com.example.CoTest.routing.Screen
 import com.example.CoTest.tools.AsyncState
-import com.example.domain.repo.model.UserModelDto
+import com.example.domain.repo.user.model.UserModelDto
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.animation.circular.CircularRevealPlugin
 import com.skydoves.landscapist.coil.CoilImage

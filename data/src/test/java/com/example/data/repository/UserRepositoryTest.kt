@@ -2,8 +2,8 @@ package com.example.data.repository
 
 import com.example.data.di.repositoryTestModule
 import com.example.domain.loadUseCase.UserRepository
-import com.example.domain.repo.model.UserDetailDtoModel
-import com.example.domain.repo.model.UserModelDto
+import com.example.domain.repo.user.model.UserDetailDtoModel
+import com.example.domain.repo.user.model.UserModelDto
 import com.google.common.truth.Truth
 import kotlinx.coroutines.runBlocking
 import org.junit.After

@@ -1,6 +1,6 @@
 package com.example.domain.searchUser
 
-import com.example.domain.repo.model.UserModelDto
+import com.example.domain.repo.user.model.UserModelDto
 
 
 interface SearchUserUseCase {

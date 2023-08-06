@@ -3,11 +3,11 @@ package com.example.data.di
 import com.example.data.base.MappingService
 import com.example.data.local.entitys.LocalUserModel
 import com.example.data.networking.userInfo.model.Results
-import com.example.data.repository.userDto.LocalToRepoUserMapper
-import com.example.data.repository.userDto.RemoteToLocalUserMapper
-import com.example.data.repository.userDto.UserDetailMapper
-import com.example.domain.repo.model.UserDetailDtoModel
-import com.example.domain.repo.model.UserModelDto
+import com.example.data.repository.user.userDto.LocalToRepoUserMapper
+import com.example.data.repository.user.userDto.RemoteToLocalUserMapper
+import com.example.data.repository.user.userDto.UserDetailMapper
+import com.example.domain.repo.user.model.UserDetailDtoModel
+import com.example.domain.repo.user.model.UserModelDto
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module

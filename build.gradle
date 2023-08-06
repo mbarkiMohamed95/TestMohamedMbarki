@@ -17,7 +17,6 @@ ext {
     commonDependencies  = [
             koinImp : "io.insert-koin:koin-android:$koin_version",
             kotlinImp : "androidx.core:core-ktx:$kotlin_version",
-            pagingImp : "androidx.paging:paging-compose:3.2.0-rc01",
             junitTImp : 'junit:junit:4.13.2',
             junitATImp : 'androidx.test.ext:junit:1.1.5',
             esspressoATImp : 'androidx.test.espresso:espresso-core:3.5.1',

@@ -7,7 +7,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.CoTest.tools.AsyncState
-import com.example.domain.repo.model.UserModelDto
+import com.example.domain.repo.user.model.UserModelDto
 import com.example.domain.searchUser.SearchUserUseCase
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.launch
