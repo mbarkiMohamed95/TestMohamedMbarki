@@ -14,7 +14,8 @@ class SearchUserUseCaseImp(private val userRepository: UserRepository) : SearchU
                 it.name?.first ?: "",
                 it.name?.last ?: "",
                 it.picture?.thumbnail ?: "",
-                it.phone
+                it.phone,
+                it.pageNumber
             )
         }
 

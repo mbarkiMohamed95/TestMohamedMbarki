@@ -1,6 +1,5 @@
 package com.example.data.tools
 
-import com.example.data.base.DomainDTOMappingService
 import com.example.data.base.MappingService
 import retrofit2.HttpException
 import retrofit2.Response
