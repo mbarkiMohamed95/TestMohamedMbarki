@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
-import com.example.domain.loadUseCase.LoadUsersListUseCase
 import com.example.domain.tools.paging.PagerService
 
 

@@ -1,12 +1,9 @@
 package com.example.data.di
 
 import androidx.room.Room
-import androidx.sqlite.db.SupportSQLiteOpenHelper
 import com.example.data.local.LocalDataBaseUserTest
 import com.example.data.local.dataBaseManager.AppDatabase
-import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 

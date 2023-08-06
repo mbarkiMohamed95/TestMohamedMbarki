@@ -2,6 +2,6 @@ package com.example.domain.tools.paging
 
 import androidx.paging.PagingSource
 
-import com.example.domain.loadUseCase.model.UserModel
+import com.example.domain.repo.model.UserModelDto
 
-abstract  class PagerService: PagingSource<Int, UserModel>()
+abstract  class PagerService: PagingSource<Int, UserModelDto>()

@@ -1,13 +1,12 @@
 package com.example.CoTest.base
 
-import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
 import com.example.CoTest.di.servicesModule
+import com.example.CoTest.di.viewModelsProvider
 import com.example.base.di.dataLayerModule
 import com.example.base.di.domainLayerModules
-import com.example.CoTest.di.viewModelsProvider
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

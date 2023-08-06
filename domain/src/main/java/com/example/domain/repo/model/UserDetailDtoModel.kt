@@ -2,7 +2,7 @@ package com.example.domain.repo.model
 
 
 
-class UserDetailRepoModel(
+class UserDetailDtoModel(
     var fullName: String = "",
     var email: String = "",
     var location: String = "",
@@ -11,5 +11,5 @@ class UserDetailRepoModel(
     var gender: String = "",
 )
 
-fun userDetailRepoModel(block: UserDetailRepoModel.() -> Unit): UserDetailRepoModel =
-    UserDetailRepoModel().apply(block)
+fun userDetailRepoModel(block: UserDetailDtoModel.() -> Unit): UserDetailDtoModel =
+    UserDetailDtoModel().apply(block)

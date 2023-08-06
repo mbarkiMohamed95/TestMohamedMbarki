@@ -1,6 +1,5 @@
 package com.example.data.local
 
-import androidx.paging.PagingSource
 import com.example.data.local.dao.userDao.UserDao
 import com.example.data.local.entitys.LocalUserModel
 
