@@ -1,4 +1,4 @@
-package com.example.location.manger
+package com.example.location.manager
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -9,14 +9,12 @@ import android.location.*
 import android.location.LocationManager
 import android.util.Log
 import androidx.core.content.ContextCompat
-import com.example.data.repository.location.LocationProvider
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.CancellationTokenSource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 
 class LocationManagerImp constructor(private val context: Context) :
