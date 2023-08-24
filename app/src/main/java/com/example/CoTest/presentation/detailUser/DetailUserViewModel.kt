@@ -23,12 +23,10 @@ class DetailUserViewModel constructor(private val userDetailUseCase: UserDetailU
     val dataState: StateFlow<DetailUserUiModel> get() = _dataState
 
     fun handleAction(action: DetailViewAction) {
-        viewModelScope.launch {
             when (action) {
                 is DetailViewAction.LoadUserDetail -> {
                     loadUserDetail(action.id)
                 }
-            }
         }
     }
 
